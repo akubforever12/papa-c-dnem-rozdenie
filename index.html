@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Папа с днем рождения!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        h1 {
+            font-size: 4rem;
+            color: white;
+            margin-bottom: 60px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+            font-weight: bold;
+            letter-spacing: 2px;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .button {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff4757 0%, #ff6348 100%);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            animation: slideUp 0.8s ease-out;
+            margin-bottom: 30px;
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(255, 71, 87, 0.4);
+        }
+
+        .button:active {
+            transform: scale(0.95);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .papa-photo {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 30px 0;
+            border: 5px solid white;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            animation: slideDown 0.8s ease-out 0.2s backwards;
+        }
+
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            pointer-events: none;
+        }
+
+        .status {
+            margin-top: 40px;
+            color: white;
+            font-size: 1.2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            min-height: 30px;
+        }
+
+        .languages {
+            margin-top: 60px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            max-height: 400px;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+        }
+
+        .languages::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .languages::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .languages::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+        }
+
+        .language {
+            color: white;
+            font-size: 1.1rem;
+            margin: 12px 0;
+            padding: 10px;
+            border-left: 3px solid #ff4757;
+            padding-left: 15px;
+            animation: fadeIn 0.6s ease-out backwards;
+        }
+
+        .language:nth-child(1) { animation-delay: 0.1s; }
+        .language:nth-child(2) { animation-delay: 0.12s; }
+        .language:nth-child(3) { animation-delay: 0.14s; }
+        .language:nth-child(4) { animation-delay: 0.16s; }
+        .language:nth-child(5) { animation-delay: 0.18s; }
+        .language:nth-child(6) { animation-delay: 0.2s; }
+        .language:nth-child(7) { animation-delay: 0.22s; }
+        .language:nth-child(8) { animation-delay: 0.24s; }
+        .language:nth-child(9) { animation-delay: 0.26s; }
+        .language:nth-child(10) { animation-delay: 0.28s; }
+        .language:nth-child(11) { animation-delay: 0.3s; }
+        .language:nth-child(12) { animation-delay: 0.32s; }
+        .language:nth-child(13) { animation-delay: 0.34s; }
+        .language:nth-child(14) { animation-delay: 0.36s; }
+        .language:nth-child(15) { animation-delay: 0.38s; }
+        .language:nth-child(16) { animation-delay: 0.4s; }
+        .language:nth-child(17) { animation-delay: 0.42s; }
+        .language:nth-child(18) { animation-delay: 0.44s; }
+        .language:nth-child(19) { animation-delay: 0.46s; }
+        .language:nth-child(20) { animation-delay: 0.48s; }
+        .language:nth-child(21) { animation-delay: 0.5s; }
+        .language:nth-child(22) { animation-delay: 0.52s; }
+        .language:nth-child(23) { animation-delay: 0.54s; }
+        .language:nth-child(24) { animation-delay: 0.56s; }
+        .language:nth-child(25) { animation-delay: 0.58s; }
+        .language:nth-child(26) { animation-delay: 0.6s; }
+        .language:nth-child(27) { animation-delay: 0.62s; }
+        .language:nth-child(28) { animation-delay: 0.64s; }
+        .language:nth-child(29) { animation-delay: 0.66s; }
+        .language:nth-child(30) { animation-delay: 0.68s; }
+        .language:nth-child(31) { animation-delay: 0.7s; }
+        .language:nth-child(32) { animation-delay: 0.72s; }
+        .language:nth-child(33) { animation-delay: 0.74s; }
+        .language:nth-child(34) { animation-delay: 0.76s; }
+        .language:nth-child(35) { animation-delay: 0.78s; }
+        .language:nth-child(36) { animation-delay: 0.8s; }
+        .language:nth-child(37) { animation-delay: 0.82s; }
+        .language:nth-child(38) { animation-delay: 0.84s; }
+        .language:nth-child(39) { animation-delay: 0.86s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="button" id="playBtn">▶ МУЗЫКА</button>
+        <h1>🎂 Папа с днем рождения! 🎉</h1>
+        <img src="papa.jpg" alt="Папа" class="papa-photo">
+        <div class="status" id="status"></div>
+        
+        <div class="languages">
+            <div class="language">1. Папа с днем рождения</div>
+            <div class="language">2. Әкеге туған күні құтты болсын</div>
+            <div class="language">3. Otamga tug'ilgan kuni bilan tabriklayman</div>
+            <div class="language">4. Happy Birthday Dad</div>
+            <div class="language">5. Joyeux anniversaire Papa</div>
+            <div class="language">6. Alles Gute zum Geburtstag Papa</div>
+            <div class="language">7. ¡Feliz cumpleaños Papá!</div>
+            <div class="language">8. Buon compleanno Papà</div>
+            <div class="language">9. Feliz aniversário Papai</div>
+            <div class="language">10. Gelukkige verjaardag Papa</div>
+            <div class="language">11. Wszystkiego najlepszego dla Taty</div>
+            <div class="language">12. Babama doğum günü kutlu olsun</div>
+            <div class="language">13. Χρόνια πολλά Μπαμπά</div>
+            <div class="language">14. Grattis på födelsedagen Pappa</div>
+            <div class="language">15. Gratulerer med fødselsdagen Pappa</div>
+            <div class="language">16. Tillykke med fødselsdagen Papa</div>
+            <div class="language">17. Onnea syntymäpäivästä Isä</div>
+            <div class="language">18. Boldog születésnapot Apa</div>
+            <div class="language">19. Všechno nejlepší k narozeninám Tato</div>
+            <div class="language">20. Všetko najlepšie k narodeninám Tatko</div>
+            <div class="language">21. La mulți ani Tată</div>
+            <div class="language">22. Честит рожден ден Татко</div>
+            <div class="language">23. Srećan rođendan Tata</div>
+            <div class="language">24. Sretan rođendan Tata</div>
+            <div class="language">25. Vse najboljše za rojstni dan Ata</div>
+            <div class="language">26. Sveiki gimtadieniui Tėte</div>
+            <div class="language">27. Daudz laimes dzimšanas dienā Tēti</div>
+            <div class="language">28. Palju õnne sünnipäevaks Isa</div>
+            <div class="language">29. З днем народження, Тато!</div>
+            <div class="language">30. З днём нараджэння, Тата!</div>
+            <div class="language">31. Իմ ծննդյանը շնորհավորում եմ</div>
+            <div class="language">32. Doğum günün mübarək olsun Ata</div>
+            <div class="language">33. დაბადების დღე კი გილოცებთ, მამა</div>
+            <div class="language">34. יום הולדת שמח אבא</div>
+            <div class="language">35. كل عام وأنت بألف خير يا والدي</div>
+            <div class="language">36. روز تولدت مبارک پدر</div>
+            <div class="language">37. 爸爸生日快乐</div>
+            <div class="language">38. お父さん、お誕生日おめでとうございます</div>
+            <div class="language">39. 아빠 생일 축하합니다</div>
+        </div>
+    </div>
+
+    <script>
+        const audio = new Audio();
+        const button = document.getElementById('playBtn');
+        const status = document.getElementById('status');
+        
+        // Указываем путь к файлу музыки
+        audio.src = 'file:///C:/Users/marie/Downloads/Айлы_досым.mp3';
+
+        button.addEventListener('click', function() {
+            if (audio.paused) {
+                audio.play().then(() => {
+                    button.textContent = '⏸ ОСТАНОВИТЬ';
+                    status.textContent = '🎵 Музыка играет...';
+                    createConfetti();
+                }).catch(err => {
+                    status.textContent = '❌ Ошибка при воспроизведении музыки';
+                    console.error('Ошибка:', err);
+                });
+            } else {
+                audio.pause();
+                button.textContent = '▶ МУЗЫКА';
+                status.textContent = '';
+            }
+        });
+
+        audio.addEventListener('ended', function() {
+            button.textContent = '▶ МУЗЫКА';
+            status.textContent = '✅ Песня завершена!';
+        });
+
+        function createConfetti() {
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.backgroundColor = ['#ff4757', '#ffa502', '#2ed573', '#1e90ff'][Math.floor(Math.random() * 4)];
+                confetti.style.animation = `fall ${2 + Math.random() * 2}s linear`;
+                document.body.appendChild(confetti);
+
+                setTimeout(() => confetti.remove(), 4000);
+            }
+        }
+
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fall {
+                to {
+                    transform: translateY(100vh) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
